@@ -3,6 +3,7 @@ const app = express()
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const routes = require('./routes/index')
 
 const PORT = 3000
 
@@ -13,9 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(methodOverride('_method'))
 
-app.get('/', (req, res) => {
-  res.send('test')
-})
+app.use(routes)
 
 app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT} at ${Date()}`)
