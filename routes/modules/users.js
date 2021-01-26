@@ -9,9 +9,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  const { name, email, password, confirmPassword } = req.body
-  User.create({ name, email, password })
-    .then(user => res.redirect('/'))
+
 })
 
 router.get('/register', (req, res) => {
@@ -19,7 +17,9 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-  res.render('register')
+  const { name, email, password, confirmPassword } = req.body
+  User.create({ name, email, password })
+    .then(user => res.redirect('/'))
 })
 
 router.get('/logout', (req, res) => {
