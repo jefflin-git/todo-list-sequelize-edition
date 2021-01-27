@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm i express express-handlebars body-parser method-override install mysql2 sequelize sequelize-cli bcryptjs connect-flash express-session"
+    "install": "npm i express express-handlebars body-parser method-override install mysql2 sequelize sequelize-cli bcryptjs connect-flash express-session passport passport-local"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,8 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.4.0",
     "sequelize-cli": "^6.2.0"
   }

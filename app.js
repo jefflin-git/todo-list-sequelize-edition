@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const flash = require('connect-flash')
+const usePassport = require('./config/passport')
 const routes = require('./routes/index')
 const PORT = 3000
 
@@ -20,6 +21,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+
+usePassport(app)
 
 app.use(flash())
 
