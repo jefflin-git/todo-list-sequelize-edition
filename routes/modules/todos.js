@@ -10,7 +10,8 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  Todo.findByPk(id)
+  const UserId = req.user.id
+  Todo.Todo.findOne({ where: { id, UserId } })
     .then(todo => res.render('detail', { todo: todo.toJSON() }))
     .catch(error => {
       console.log(error)
